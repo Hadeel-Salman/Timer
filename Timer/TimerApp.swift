@@ -1,17 +1,17 @@
-//
-//  TimerApp.swift
-//  Timer
-//
-//  Created by Hadeel on 17/09/2025.
-//
 
 import SwiftUI
 
 @main
 struct TimerApp: App {
+    
+    @StateObject var data = TimerCollection()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                HomePageView()
+            }
+            .environmentObject(data)
         }
     }
 }
