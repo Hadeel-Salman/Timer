@@ -1,18 +1,26 @@
-//
-//  TextFieldStyle.swift
-//  Timer
-//
-//  Created by Hadeel on 19/09/2025.
-//
+
 
 import SwiftUI
 
 struct TextFieldStyle: View {
+    
+    var label : String
+    var placeholder : String
+    @Binding var newItem : String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(label)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .bold()
+            TextField(placeholder,text: $newItem)
+                .textFieldStyle(.roundedBorder)
+        }
+        .padding(.horizontal)
     }
 }
 
 #Preview {
-    TextFieldStyle()
+    TextFieldStyle(label: "label", placeholder: "placeholder", newItem: .constant(""))
+        .environmentObject(TimerCollection())
 }

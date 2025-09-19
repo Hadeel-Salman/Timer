@@ -14,30 +14,34 @@ struct HomePageView: View {
                 List{
                     ForEach(data.timers) { timer in
                         NavigationLink{
-                            TimerListView()
+                            //direction
                         }label: {
-                            HStack{
-                                Text(timer.emoji)
-                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                    .padding(8)
-                                    .background(timer.color.opacity(0.4))
-                                    .cornerRadius(8)
-                                VStack(alignment: .leading){
-                                    Text(timer.name)
-                                        .bold()
-                                    Text(formatTime(timer.duration))
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .monospacedDigit()
-                                }
-                            }
+                            TimerListView(emoji: timer.emoji, name: timer.name, color: timer.color, duration: timer.duration)
                         }
                     }
+                }
+                
+                Spacer()
+                NavigationLink{
+                    NewTimerView()
+                        .navigationTitle("Add new timer")
+                }label: {
+                    Button("Add new"){
+                        NewTimerView()
+                    }
+                    .bold()
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue.opacity(0.3))
+                    .foregroundColor(.black)
+                    .cornerRadius(32)
+                    .padding([.top, .leading, .trailing])
                 }
             }
         }
     }
 }
+
 
 #Preview {
     HomePageView()
