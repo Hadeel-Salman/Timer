@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F028D652E7DC467004D312E /* TimerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F028D642E7DC467004D312E /* TimerItemView.swift */; };
 		5F543FDC2E7BE1C9003F9B5B /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F543FDB2E7BE1C9003F9B5B /* TimerListView.swift */; };
 		5F72B2662E7C773600B46242 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72B2652E7C773600B46242 /* HomePageView.swift */; };
 		5F72B2692E7C783700B46242 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F72B2682E7C783700B46242 /* TimeFormatter.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F028D642E7DC467004D312E /* TimerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerItemView.swift; sourceTree = "<group>"; };
 		5F543FDB2E7BE1C9003F9B5B /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
 		5F72B2652E7C773600B46242 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		5F72B2682E7C783700B46242 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				5F543FDB2E7BE1C9003F9B5B /* TimerListView.swift */,
 				5F72B2652E7C773600B46242 /* HomePageView.swift */,
 				5F7437D42E7D6D1800F20C85 /* NewTimerView.swift */,
+				5F028D642E7DC467004D312E /* TimerItemView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				5F7437D92E7D6FC400F20C85 /* TextFieldStyle.swift in Sources */,
 				5F72B2692E7C783700B46242 /* TimeFormatter.swift in Sources */,
 				5F7437D52E7D6D1800F20C85 /* NewTimerView.swift in Sources */,
+				5F028D652E7DC467004D312E /* TimerItemView.swift in Sources */,
 				5FA020572E7B2B9D006D25F7 /* ContentView.swift in Sources */,
 				5FA020552E7B2B9D006D25F7 /* TimerApp.swift in Sources */,
 				5F72B2662E7C773600B46242 /* HomePageView.swift in Sources */,

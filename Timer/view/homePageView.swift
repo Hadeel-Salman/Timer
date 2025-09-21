@@ -5,6 +5,11 @@ import SwiftUI
 struct HomePageView: View {
     @EnvironmentObject var data : TimerCollection
     
+    func DeleteTimer(at offsets: IndexSet) {
+        data.timers.remove(atOffsets: offsets)
+    }
+
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -14,11 +19,12 @@ struct HomePageView: View {
                 List{
                     ForEach(data.timers) { timer in
                         NavigationLink{
-                            //direction
+                            TimerItemView(timer: timer)
                         }label: {
                             TimerListView(emoji: timer.emoji, name: timer.name, color: timer.color, duration: timer.duration)
                         }
                     }
+                    .onDelete(perform: DeleteTimer)
                 }
                 
                 Spacer()
@@ -26,9 +32,7 @@ struct HomePageView: View {
                     NewTimerView()
                         .navigationTitle("Add new timer")
                 }label: {
-                    Button("Add new"){
-                        NewTimerView()
-                    }
+                    Text("Add new")
                     .bold()
                     .frame(maxWidth: .infinity)
                     .padding()

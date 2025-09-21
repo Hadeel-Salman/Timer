@@ -17,21 +17,46 @@ struct NewTimerView: View {
             TextFieldStyle(label: "Add new Emoji", placeholder: "", newItem: $newEmoji)
             ColorPicker("Pick a color", selection: $newColor)
                 .padding(.horizontal)
-            Stepper("\(formatTime(newTimer))",
-                    value: $newTimer,
-                    in: 10...7200,
-                    step: 60)
-                .padding(.horizontal)
-            
+            HStack {
+                Button(action: {
+                    if newTimer > 10 {
+                        newTimer -= 60
+                    }
+                }) {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.red)
+                }
+
+                Spacer()
+
+                Text(formatTime(newTimer))
+                    .font(.title3)
+                    .monospacedDigit()
+
+                Spacer()
+
+                Button(action: {
+                    if newTimer < 7200 {
+                        newTimer += 60
+                    }
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.green)
+                }
+            }
+            .padding(.horizontal)
+
             Button("add new Timer"){
                 guard !newName.isEmpty , !newEmoji.isEmpty else { return }
-                let newTimer = TimerItem(name: newName, emoji: newEmoji, color: newColor, duration: newTimer, remaining: newTimer)
+                let timerItem = TimerItem(name: newName, emoji: newEmoji, color: newColor, duration: newTimer, remaining: newTimer)
                 
-                data.timers.append(newTimer)
+                data.timers.append(timerItem)
                 
                 newName = ""
                 newEmoji = ""
-                newColor = .primary
+                newColor = .blue
                 dismiss()
                 
                 
