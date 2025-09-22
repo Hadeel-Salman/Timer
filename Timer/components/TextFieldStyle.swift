@@ -12,6 +12,7 @@ struct TextFieldStyle: View {
         VStack{
             Text(label)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.title3)
                 .bold()
             TextField(placeholder,text: $newItem)
                 .textFieldStyle(.roundedBorder)
